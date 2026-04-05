@@ -1,0 +1,416 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+font-family:Poppins;
+margin:0;
+background:#f6f7fb;
+color:#222;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    gap: 10px;
+}
+
+.logo img {
+    position: relative;
+    top: 2px;
+    height: 45px;
+    transform: scale(1.6);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+}
+
+.logo img:hover{
+    transform: scale(1.05);
+}
+
+
+.header{
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: 90%;
+max-width: 1200px;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 10px 20px;
+
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(10px);
+
+border-radius: 50px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+z-index: 1000;
+}
+
+.header{
+animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.nav{
+    display: flex;
+    gap: 20px;
+}
+
+.nav a{
+margin: 0 18px;
+text-decoration: none;
+color: #333;
+font-size: 14px;
+font-weight: 500;
+position: relative;
+padding: 8px 12px;
+transition: 0.3s;
+}
+
+.nav a:active{
+    color: #009fe3;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #009fe3;
+    transition: 0.3s;
+}
+
+.nav a:active::after {
+    width: 100%;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('images/background.jpg');
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.primary-btn{
+background:#ff7a00;
+padding:14px 28px;
+color:white;
+text-decoration:none;
+border-radius:6px;
+margin-right:10px;
+}
+
+.secondary-btn{
+background:white;
+padding:14px 28px;
+color:black;
+text-decoration:none;
+border-radius:6px;
+}
+
+.feature{
+text-align:center;
+padding:20px;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+padding:80px 10%;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:60px 10%;
+}
+
+.product{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 20px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product img{
+width:100%;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+padding:60px 10%;
+}
+
+.gallery img{
+width:100%;
+border-radius:8px;
+}
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:60px 10%;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+padding:60px 10%;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:1px solid #ddd;
+}
+.contact-form button{
+background:#111;
+color:white;
+padding:12px;
+border:none;
+}
+
+.footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.whatsapp-float{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+background:#25d366;
+
+color:white;
+
+padding:15px 20px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+/* ===== SECTION ===== */
+.features {
+  padding: 120px 8%;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+
+/* WRAPPER */
+.carousel-wrapper { 
+    overflow: hidden;
+    width: 100%;
+    padding: 60px 0;
+}
+
+/* TRACK */
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.1s linear;
+}
+
+/* ===== CARD ===== */
+.card {
+  width: 240px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+
+  transition: all 0.1s ease;
+
+  transform: scale(0.9);
+  flex-shrink: 0;
+  opacity: 0.5;
+
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* CENTER FOCUS */
+.card.active {
+    transform: scale(1.15);
+    opacity: 1;
+    z-index: 2;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* POSITION IN 3D CIRCLE */
+.card:nth-child(1) { transition-delay:0.1s;}
+.card:nth-child(2) { transition-delay: 0.2s;}
+.card:nth-child(3) { transition-delay: 0.3s;}
+.card:nth-child(4) { transition-delay: 0.4s;}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.card h3 {
+  padding: 12px;
+  font-weight: 600;
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background:  radial-gradient(CIRCLE, rgba(0,159,227,0.2),transparent);
+    opacity: 0;
+    transition: 0.1s;
+}
+
+.card.active::after{
+    opacity: 1;
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+.card:hover { 
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.carousel:hover.card{
+    opacity:0.5;
+}
+
+.carousel.card:hover{
+    opacity:1;
+}
+
+.insta-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.insta-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* 🔥 Hover Effect */
+.insta-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Optional dark overlay */
+.insta-card::after {
+  content: "View on Instagram";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.insta-card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .insta-container {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align:center;
+    }
+}
+
+@media (min-width: 769px) {
+    .insta-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+}
